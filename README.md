@@ -19,3 +19,5 @@ Documentation for the actor is available in the same webpage.
 We used Selenium web scraping library with python to get the data needed about various police stations around Cairo and Giza from https://www.yellowpages.com.eg/ . We were able to retrieve the name, address and location of the police station.
 ### Parks & Gas Stations :
 We used OpenStreetMap to collect the data about parks and gas stations, we used their tool "Overpass Turbo" which provided the data needed in an easy way in the form of json or geojson files. The link to OverPass Turbo : https://overpass-turbo.eu/ .
+### Hospitals & Pharmacies : 
+We used Puppeteer, a web scrapping library with Node in JavaScipt to extract data about hospitals and pharmacies in Cairo. The data was extracted from https://www.yellowpages.com.eg/ and compiled into a json file which included names and addresses. 

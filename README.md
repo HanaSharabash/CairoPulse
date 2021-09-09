@@ -17,3 +17,5 @@ Link to the apify actor : https://apify.com/dtrungtin/booking-scraper .
 Documentation for the actor is available in the same webpage.
 ### Police Stations :
 We used Selenium web scraping library with python to get the data needed about various police stations around Cairo and Giza from https://www.yellowpages.com.eg/ . We were able to retrieve the name, address and location of the police station.
+### Parks & Gas Stations :
+We used OpenStreetMap to collect the data about parks and gas stations, we used their tool "Overpass Turbo" which provided the data needed in an easy way in the form of json or geojson files. The link to OverPass Turbo : https://overpass-turbo.eu/ .

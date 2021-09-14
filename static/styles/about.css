@@ -1,0 +1,17 @@
+.about
+{
+background:#2a2d36;
+border-radius:0;
+padding:100px 40px 200px 40px;
+
+}
+.about h1
+{
+color:#fff;
+font-weight:600;
+}
+.about p 
+{
+color:#fff;
+font-size:18px;
+}

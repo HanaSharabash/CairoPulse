@@ -137,7 +137,7 @@ window.addEventListener('load' , async function (event) {
 				from + (to ? '&ndash;' + to : '+'));
 		}
 
-		div.innerHTML = '<div>'+labels.join('<br>')+'</div>';
+		div.innerHTML = '<b>Vibrancy Levels:</b><br>'+'<div>'+labels.join('<br>')+'</div>';
 
 		return div;
     };

@@ -90,13 +90,18 @@ window.addEventListener('load' , async function (event) {
 
 
         function getColor(c) {
-		return  c == 1  ? '#f2f0f7' :
-				c == 2  ? '#dadaeb' :
-				c == 3  ? '#bcbddc' :
-				c == 4  ? '#9e9ac8':
-				c == 5  ? '#807dba':
-				c == 6  ? '#6a51a3':
-						  '#4a1486';
+		return  c == 0  ? '#bfd3e6' :
+				c == 1  ? '#9ebcda' :
+				c == 2  ? '#bcbddc' :
+				c == 3  ? '#9e9ac8' :
+				c == 4  ? '#88419d' :
+				c == 5  ? '#810f7c' :
+				c == 6	? '#4d004b' :
+				           '#4d004b';
+
+
+
+
 	}
 
 

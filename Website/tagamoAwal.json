@@ -1,0 +1,341 @@
+{
+    "_id": {
+        "$oid": "6140eeec4c625096fcc6ca74"
+    },
+    "name_AR": "التجمع الأول",
+    "name_EN": "1st settlement",
+    "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [
+                        31.4607238,
+                        30.0532431
+                    ],
+                    [
+                        31.4431177,
+                        30.051957
+                    ],
+                    [
+                        31.4425384,
+                        30.052217
+                    ],
+                    [
+                        31.4422272,
+                        30.0525745
+                    ],
+                    [
+                        31.4420985,
+                        30.0534985
+                    ],
+                    [
+                        31.4440297,
+                        30.0607788
+                    ],
+                    [
+                        31.433097,
+                        30.0633045
+                    ],
+                    [
+                        31.432743,
+                        30.0640102
+                    ],
+                    [
+                        31.4371632,
+                        30.0679704
+                    ],
+                    [
+                        31.4377211,
+                        30.0685832
+                    ],
+                    [
+                        31.4388369,
+                        30.0734113
+                    ],
+                    [
+                        31.439309,
+                        30.0740983
+                    ],
+                    [
+                        31.4398669,
+                        30.0744511
+                    ],
+                    [
+                        31.4406394,
+                        30.0746182
+                    ],
+                    [
+                        31.4430641,
+                        30.0748411
+                    ],
+                    [
+                        31.4492439,
+                        30.0754167
+                    ],
+                    [
+                        31.4498447,
+                        30.0752867
+                    ],
+                    [
+                        31.4617752,
+                        30.0701245
+                    ],
+                    [
+                        31.4617323,
+                        30.0639406
+                    ],
+                    [
+                        31.4615177,
+                        30.0539118
+                    ],
+                    [
+                        31.4607238,
+                        30.0532431
+                    ]
+                ]
+            ]
+        ]
+    },
+    "atms": [],
+    "banks": [],
+    "bus_stations": [
+        {
+            "$oid": "6134aa7953cd1ccec95b5af0"
+        }
+    ],
+    "malls": [
+        {
+            "$oid": "6140eda6196ec07cb2ed6401"
+        },
+        {
+            "$oid": "6140eda6196ec07cb2ed6425"
+        }
+    ],
+    "universities": [
+        {
+            "$oid": "6140ee1725befc93bb1f5039"
+        },
+        {
+            "$oid": "6140ee1725befc93bb1f5052"
+        }
+    ],
+    "beauty_salons": [
+        {
+            "$oid": "6140ee97331c91af47c50983"
+        },
+        {
+            "$oid": "6140ee97331c91af47c51173"
+        },
+        {
+            "$oid": "6140ee97331c91af47c51238"
+        },
+        {
+            "$oid": "6140ee97331c91af47c5137a"
+        },
+        {
+            "$oid": "6140ee97331c91af47c513a4"
+        }
+    ],
+    "bakery_pastry_shops": [
+        {
+            "$oid": "6140e85bbf6beb06b749c856"
+        },
+        {
+            "$oid": "6140e85bbf6beb06b749cc4c"
+        }
+    ],
+    "embassies_consulates": [],
+    "car_services": [
+        {
+            "$oid": "6140e883f4177114660dc88a"
+        },
+        {
+            "$oid": "6140e883f4177114660dcb1e"
+        },
+        {
+            "$oid": "6140e883f4177114660dcb99"
+        }
+    ],
+    "hotels": [
+        {
+            "$oid": "6140e204d1f23e9a35bfe972"
+        },
+        {
+            "$oid": "6140e204d1f23e9a35bfe9d1"
+        },
+        {
+            "$oid": "6140e204d1f23e9a35bfeb1d"
+        }
+    ],
+    "cafes": [
+        {
+            "$oid": "6134abff53cd1ccec95b5e5d"
+        }
+    ],
+    "churches": [
+        {
+            "$oid": "6134ad6353cd1ccec95b60cd"
+        },
+        {
+            "$oid": "6134ad6453cd1ccec95b60d0"
+        },
+        {
+            "$oid": "6134ad6453cd1ccec95b60d1"
+        },
+        {
+            "$oid": "6134ad6553cd1ccec95b60d2"
+        },
+        {
+            "$oid": "6134ad6553cd1ccec95b60d3"
+        },
+        {
+            "$oid": "6134ad6553cd1ccec95b60d4"
+        }
+    ],
+    "cinemas": [],
+    "drugstores": [
+        {
+            "$oid": "6134ae7a53cd1ccec95b621b"
+        },
+        {
+            "$oid": "6134ae7a53cd1ccec95b621c"
+        },
+        {
+            "$oid": "6134ae7a53cd1ccec95b621e"
+        },
+        {
+            "$oid": "6134ae7b53cd1ccec95b621f"
+        }
+    ],
+    "gas_stations": [
+        {
+            "$oid": "6134aec153cd1ccec95b62ba"
+        }
+    ],
+    "government_offices": [
+        {
+            "$oid": "6134b02153cd1ccec95b64dd"
+        },
+        {
+            "$oid": "6134b13d53cd1ccec95b66d2"
+        },
+        {
+            "$oid": "6134b13d53cd1ccec95b66d3"
+        },
+        {
+            "$oid": "6134b13e53cd1ccec95b66d4"
+        },
+        {
+            "$oid": "6134b13e53cd1ccec95b66d5"
+        },
+        {
+            "$oid": "6134b13e53cd1ccec95b66d6"
+        },
+        {
+            "$oid": "6134b13f53cd1ccec95b66d7"
+        }
+    ],
+    "gyms": [
+        {
+            "$oid": "6134b2b753cd1ccec95b69b9"
+        }
+    ],
+    "hair_cares": [],
+    "hardware_stores": [],
+    "hospitals": [
+        {
+            "$oid": "6134b6c953cd1ccec95b71fa"
+        },
+        {
+            "$oid": "6134b6c953cd1ccec95b71fb"
+        }
+    ],
+    "landmarks": [],
+    "libraries": [
+        {
+            "$oid": "6134b8d853cd1ccec95b7591"
+        },
+        {
+            "$oid": "6134b8d953cd1ccec95b7593"
+        },
+        {
+            "$oid": "6134b8d953cd1ccec95b7594"
+        },
+        {
+            "$oid": "6134b8d953cd1ccec95b7595"
+        },
+        {
+            "$oid": "6134b8da53cd1ccec95b7596"
+        },
+        {
+            "$oid": "6134b8da53cd1ccec95b7597"
+        },
+        {
+            "$oid": "6134b8da53cd1ccec95b7598"
+        }
+    ],
+    "mosques": [],
+    "museums": [
+        {
+            "$oid": "6134ba9453cd1ccec95b7919"
+        },
+        {
+            "$oid": "6134bb6153cd1ccec95b7a4d"
+        }
+    ],
+    "parkings": [
+        {
+            "$oid": "6134bcad53cd1ccec95b7cbd"
+        }
+    ],
+    "parks": [],
+    "pharmacies": [
+        {
+            "$oid": "6134bf5653cd1ccec95b818f"
+        },
+        {
+            "$oid": "6134bf5753cd1ccec95b8190"
+        },
+        {
+            "$oid": "6134bf5753cd1ccec95b8192"
+        },
+        {
+            "$oid": "6134bf5753cd1ccec95b8193"
+        },
+        {
+            "$oid": "6134bf5853cd1ccec95b8194"
+        }
+    ],
+    "police": [
+        {
+            "$oid": "6134bf9d53cd1ccec95b821f"
+            
+        },
+        {
+            "$oid": "6134bf9d53cd1ccec95b8220"
+        },
+        {
+            "$oid": "6134bf9d53cd1ccec95b8221"
+        }
+    ],
+    "restaurants": [],
+    "schools": [
+        {
+            "$oid": "6134c31953cd1ccec95b87cf"
+        },
+        {
+            "$oid": "6134c31953cd1ccec95b87d1"
+        }
+    ],
+    "stores": [],
+    "subway_stations": [],
+    "supermarkets": [
+        {
+            "$oid": "6134c70253cd1ccec95b8d8f"
+        },
+        {
+            "$oid": "6134c70353cd1ccec95b8d91"
+        }
+    ]
+}

@@ -29,14 +29,40 @@
   </head>
   <body>
 
-    <!-- js file -->
-    <script src="home-page-app.js"></script>
+    
 
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="landing-page.html">Cairo Pulse</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-light">
+                        Sign up
+                    </button>
+                </li>
+            </div>
+        </div>
+    </nav>
     <!-- Use any element to open the sidenav -->
-    <button id="r" class="btn btn-outline-dark" style="margin-left: 700px ;" onclick="openNav(id)">Rehab</button>
-    <button id="t" class="btn btn-outline-dark" style="margin-left: 800px ;"onclick="openNav(id)">Tagom' Awal</button>
-
+    
+<!-- js file -->
+<script src="home-page-app.js"></script>
 
     <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
     <div id="main">
@@ -65,11 +91,11 @@
                         <div class="list-group">
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Schools
-                              <span id ="schools" class="ms-auto badge bg-dark ms-auto rounded-pill">8</span>
+                              <span id ="schools" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Universities
-                                <span id ="universities" class="badge bg-dark ms-auto rounded-pill">1</span>
+                                <span id ="universities" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                           </div>
 
@@ -90,27 +116,23 @@
                         <div class="list-group">
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Cafes
-                                <span id ="cafes" class="badge bg-dark ms-auto rounded-pill">10</span>
+                                <span id ="cafes" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Cinemas
-                                <span id ="cinemas" class="badge bg-dark ms-auto rounded-pill">0</span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Clubs
-                                <span id ="clubs" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="cinemas" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Malls
-                                <span id ="malls" class="badge bg-dark ms-auto rounded-pill">2</span>
+                                <span id ="malls" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Parks
-                                <span id ="parks" class="badge bg-dark ms-auto rounded-pill">1</span>
+                                <span id ="parks" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Restaurants
-                              <span id ="restaurants" class="ms-auto badge bg-dark ms-auto rounded-pill">5</span>
+                              <span id ="restaurants" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             
                             
@@ -133,15 +155,15 @@
                         <div class="list-group">
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Bakery/Pastry Shops
-                                <span id ="bakery_pastry_shops" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="bakery_pastry_shops" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Stores
-                                <span id ="stores" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="stores" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Supermarkets
-                              <span id ="supermarkets" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                              <span id ="supermarkets" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             
                           </div>
@@ -163,11 +185,11 @@
                         <div class="list-group">
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 ATMs
-                                <span id ="atms" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="atms" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Banks
-                              <span id ="banks" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                              <span id ="banks" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                            
                           </div>
@@ -189,15 +211,15 @@
                         <div class="list-group">
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Embassies/Consulates
-                                <span id ="embassies_consulates" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="embassies_consulates" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Government Offices
-                              <span id ="government_offices" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                              <span id ="government_offices" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Police Stations
-                                <span id ="police" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="police" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                           </div>
 
@@ -216,15 +238,15 @@
                         <div class="list-group">
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Drugstores
-                                <span id ="drugstores" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="drugstores" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Hospitals
-                              <span id ="hospitals" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                              <span id ="hospitals" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Pharmacies
-                                <span id ="pharmacies" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="pharmacies" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                           </div>
                     </div>
@@ -243,15 +265,15 @@
                         <div class="list-group">
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                                 Beauty Salons
-                                <span id ="beauty_salons" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="beauty_salons" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                               </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Gyms
-                                <span id ="gyms" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="gyms" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Hair Cares
-                                <span id ="hair_cares" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="hair_cares" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             
                           </div>
@@ -272,15 +294,15 @@
                         <div class="list-group">
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Landmarks
-                                <span id ="landmarks" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="landmarks" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Libraries
-                              <span id ="libraries" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                              <span id ="libraries" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Museums
-                                <span id ="museums" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="museums" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                           </div>
 
@@ -300,11 +322,11 @@
                         <div class="list-group">
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Bus Stations
-                              <span id ="bus_Stations" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                              <span id ="bus_stations" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Subway Stations
-                                <span id ="subway_stations" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="subway_stations" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                           </div>
 
@@ -325,11 +347,11 @@
                         <div class="list-group">
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Churches
-                              <span id ="churches" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                              <span id ="churches" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Mosques
-                                <span id ="mosques" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="mosques" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                           </div>
 
@@ -350,23 +372,23 @@
                         <div class="list-group">
                             <button class="btn-lg list-group-item list-group-item-action toggle" >
                               Gas Stations
-                              <span id ="gas_stations" class="ms-auto badge bg-dark ms-auto rounded-pill">0</span>
+                              <span id ="gas_stations" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Hardware Stores
-                                <span id ="harware_stores" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="hardware_stores" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Parkings
-                                <span id ="Parkings" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="parkings" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Car Services
-                                <span id ="car_services" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="car_services" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                             <button class="btn-lg link-dark list-group-item list-group-item-action">
                                 Hotels
-                                <span id ="hotels" class="badge bg-dark ms-auto rounded-pill">0</span>
+                                <span id ="hotels" class="badge bg-dark ms-auto rounded-pill"></span>
                             </button>
                           </div>
 

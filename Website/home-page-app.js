@@ -1,33 +1,62 @@
-
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav(id) {
     document.getElementById("mySidenav").style.width = "500px";
     document.getElementById("main").style.marginLeft = "0px";
 
     if (id == "t") {
-        fetch('sample.txt')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('data').innerHTML = data
-            });
-
+        fetch('tagamoAwal.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
     } else if (id == "r") {
-        fetch('atms.json')
-            .then(res => res.json())
-            .then(data => {
-                let output = ` 
-                        `;
-                data.forEach(element => {
-                    output += `
-                    <ul>
-                        <li>name: ${element.name}</li>
-                        <li>address: ${element.address}</li>
-                    </ul>
-           `;
-                });
-                document.getElementById('Financial Services').innerHTML = output
-            });
+        fetch('rehab.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
     }
+
+
+    
+   
+    function appendData(data) {
+   
+      
+        var PointsOfInterest= [];
+        let flag = false;
+        for(var x in data)
+        {
+            if(x.localeCompare("atms")==0)
+                flag=true;
+            if(flag)
+              PointsOfInterest.push(x);    
+        }
+
+    
+
+      for(let i=0;i<PointsOfInterest.length;i++){
+        var mainContainer = document.getElementById(PointsOfInterest[i]);
+        //   for (var i = 0; i < data.length; i++) {
+               var div = document.createElement("div");
+               
+               div.innerHTML = (data[PointsOfInterest[i]]).length;
+               mainContainer.innerHTML=div.innerHTML;
+       //    }
+      }
+    }
+
+
+
 }
 
 

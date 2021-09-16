@@ -1,5 +1,24 @@
+ async function get_geometries (){
+       const response = await fetch( '/get-geometries', {
+            method: 'GET',
+            headers: {
+                 'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+          }) ;
+      data = await response.json() ;
+      return data ;
+}
 
-       var map = L.map('mapid').setView([30.0444, 31.2357 ], 11);
+window.addEventListener('load' , async function (event) {
+
+      var districts ;
+
+      try {
+         districts = await get_geometries() ;
+
+
+      var map = L.map('mapid').setView([30.0444, 31.2357 ], 11);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 30,
@@ -22,7 +41,7 @@
 
         info.update = function (props) {
             this._div.innerHTML = '<h4>District Properties</h4>' +
-              (props ? '<b>' + props.NAME_ar + '</b> <br> <b>'+props.NAME_en+'</b>' : 'Hover over a District');
+              (props ? '<b>' + props.name_AR + '</b> <br> <b>'+props.name_EN+'</b>' : 'Hover over a District');
         };
 
         info.addTo(map);
@@ -88,7 +107,7 @@
 			color: 'white',
 			dashArray: '3',
 			fillOpacity: 0.8,
-			fillColor: getColor(feature.properties.c)
+			fillColor: getColor(feature.properties.vibrancy.cluster)
 		};
 	}
 
@@ -123,8 +142,119 @@
     map.attributionControl.addAttribution('Copyrights &copy; <a href="https://github.com/HanaSharabash/CairoPulse">Cairo Pulse</a>');
 
 
-        var geojson = L.geoJson(cairoDistricts, {
+    console.log(districts) ;
+        var geojson = L.geoJson(districts, {
             style: style,
             onEachFeature: onEachFeature
 
         }).addTo(map);
+
+       }
+       catch (e){
+       console.log(e) ;
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const search_bar = document.getElementById('search-bar') ;
+
+
+search_bar.addEventListener('keyup' , async function(event) {
+
+    if(search_bar.value != ""){
+        const response = await fetch( '/search_neighborhoods' , {
+            method: 'POST',
+            headers: {
+                 "X-CSRFToken": csrftoken,
+                 'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(search_bar.value)
+
+      }) ;
+      const data = await response.json() ;
+      const div = document.createElement('div');
+
+      for(let i = 0 ; i < data.length ; i++ ){
+         const search_entry = document.createElement('a');
+         search_entry.id = data[i]['_id']['$oid']
+         search_entry.innerHTML = data[i]['name_EN']+', '+data[i]['name_AR'] ;
+         search_entry.addEventListener('click',function (event) {
+
+            geojson.eachLayer(function(layer) {
+                console.log(layer.feature.properties.name_EN);
+
+                if(layer.feature.properties._id['$oid']===search_entry.id){
+                    map.fitBounds(layer.getBounds());
+                };
+            });
+
+         })
+         div.appendChild(search_entry) ;
+      }
+      const search_results = document.getElementById('search-res');
+      search_results.innerHTML = ''
+      search_results.appendChild(div) ;
+      }
+      else{
+      const search_results = document.getElementById('search-res');
+      search_results.innerHTML = ''
+
+      }
+})
+
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie('csrftoken');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});

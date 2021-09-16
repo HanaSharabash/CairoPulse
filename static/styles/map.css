@@ -12,7 +12,7 @@
 
 #search-res a:hover {background-color: #f1f2ff}
 
-#mapid { display:inline-block; height:675px ; width: 100%;position: relative ;}
+#mapid { display:inline-block; height:100% ; width: 100%;position: relative ;}
 
 #search-bar {height:45px;margin-bottom:5px;}
 

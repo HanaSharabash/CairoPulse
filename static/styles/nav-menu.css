@@ -1,0 +1,37 @@
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: relative ; /* Stay in place */
+  z-index: 0; /* Stay on top */
+  background-color: rgb(235, 235, 235);  /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 50px; /* Place content 60px from the top */
+  top:30px ;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: relative;
+  top: 50px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: black;
+}
+.sidenav .closebtn:hover{
+    color: rgb(128, 49, 49);
+}
+
+#accordionFlushExample{
+  margin-top: 30px;
+}
+.fonty{
+  font-family: 'Montserrat', sans-serif;
+}
+
+#mySidenav {
+z-index: 2000 ;
+}

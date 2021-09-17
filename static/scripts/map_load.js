@@ -59,6 +59,9 @@ function paint_map(){
         function zoomToFeature(e) {
             map.fitBounds(e.target.getBounds());
 
+            const x = document.getElementById("mySidenav") ;
+            x.style.width = "500px"
+            console.log(x);
         }
 
 
@@ -176,3 +179,10 @@ window.addEventListener('load' , async function (event) {
       paint_map();
       searchEventListener() ;
 });
+
+
+
+
+
+
+

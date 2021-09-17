@@ -1,6 +1,7 @@
 const search_bar = document.getElementById('search-bar') ;
 const csrftoken = getCookie('csrftoken');
 
+
 search_bar.addEventListener ('keydown',function (e) {
     if (e.keyCode == 13) {
         e.preventDefault();
@@ -9,7 +10,6 @@ search_bar.addEventListener ('keydown',function (e) {
 });
 
 async function handler (event) {
-
     if(search_bar.value != ""){
         const response = await fetch( '/search_neighborhoods' , {
             method: 'POST',
@@ -30,11 +30,9 @@ async function handler (event) {
          search_entry.addEventListener('click',function (event) {
 
             geojson.eachLayer(function(layer) {
-                console.log(layer.feature.properties.name_EN);
-
                 if(layer.feature.properties._id['$oid']===search_entry.id){
-                    map.fitBounds(layer.getBounds());
-//                      zoomToFeature(layer) ;
+                    // map.fitBounds(layer.getBounds());
+                     zoom(layer) ;
                 };
             });
 
@@ -55,8 +53,9 @@ async function handler (event) {
 
 
 function searchEventListener () {
-search_bar.addEventListener('keyup', handler ) ;
-search_bar.addEventListener('click',handler) ;
+    
+    search_bar.addEventListener('keyup', handler ) ;
+    search_bar.addEventListener('click',handler) ;
 }
 
 function getCookie(name) {

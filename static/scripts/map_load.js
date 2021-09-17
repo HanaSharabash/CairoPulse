@@ -2,7 +2,7 @@ var districts ;
 var geojson ;
 var map ;
 
-function paint_map(){
+async function paint_map(){
       map = L.map('mapid').setView([30.0444, 31.2357 ], 11);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -56,8 +56,8 @@ function paint_map(){
             info.update();
         }
 
-         async function zoomToFeature(e) {
-
+         zoom = async function zoomToFeature(e) {
+            console.log(e);
            const side_nav = document.getElementById("mySidenav") ;
            const response = await fetch( '/get-categories' , {
             method: 'POST',
@@ -65,7 +65,7 @@ function paint_map(){
                  "X-CSRFToken": csrftoken,
                  'Content-Type': 'application/json',
             },
-            body: JSON.stringify(e.target.feature.properties._id['$oid'])
+            body: e.target?JSON.stringify(e.target.feature.properties._id['$oid']):JSON.stringify(e.feature.properties._id['$oid'])
 
              }) ;
 
@@ -81,7 +81,7 @@ function paint_map(){
                 }
              });
 
-            map.fitBounds(e.target.getBounds());
+            map.fitBounds(e.target?e.target.getBounds():e.getBounds());
             side_nav.style.width = "400px";
 
         }
@@ -95,7 +95,7 @@ function paint_map(){
             layer.on({
                 mouseover: highlightFeature,
                 mouseout: resetHighlight,
-                click: zoomToFeature
+                click: zoom
              });
         }
 
@@ -167,18 +167,7 @@ function paint_map(){
         }).addTo(map);
 
 
-
-
-
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -197,10 +186,9 @@ async function get_geometries (){
 
 window.addEventListener('load' , async function (event) {
 
-
       districts = await get_geometries() ;
       console.log(districts) ;
-      paint_map();
+      await paint_map();
       searchEventListener() ;
 });
 

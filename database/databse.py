@@ -1,10 +1,17 @@
 import json
-from bson import json_util
+from bson import json_util , objectid
+from bson.objectid import ObjectId
 from pymongo import MongoClient
 import re
 
 client =  MongoClient('mongodb+srv://CairoPulse:CairoPulse@cluster0.538hc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 db = client['cairo_pulse']
+
+fields = []
+for i in list(db.neighbourhoods.find_one({})):
+    if not i in ['_id','name_AR','name_EN','geometry','vibrancy']:
+        fields.append(i)
+
 
 
 def get_neighbourhoods():
@@ -80,6 +87,27 @@ def search_neighborhoods (search_key):
 
     return parse_json(list(res))
 
+
+
+def get_categories (id):
+
+    bsonid = ObjectId(id)
+    print(bsonid)
+    res = db.neighbourhoods.aggregate([
+        {
+          "$match" : {"_id" : bsonid }
+        },
+        {
+            "$project" : {
+                d : {"$size" : '$'+d } for d in fields
+            }
+        }
+    ])
+
+    return parse_json(res)
+
+
 def parse_json(data):
     return json.loads(json_util.dumps(data))
+
 

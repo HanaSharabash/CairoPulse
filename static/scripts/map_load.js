@@ -56,11 +56,33 @@ function paint_map(){
             info.update();
         }
 
-        function zoomToFeature(e) {
-            map.fitBounds(e.target.getBounds());
+         async function zoomToFeature(e) {
 
-            const x = document.getElementById("mySidenav") ;
-            x.style.width = "500px";
+           const side_nav = document.getElementById("mySidenav") ;
+           const response = await fetch( '/get-categories' , {
+            method: 'POST',
+            headers: {
+                 "X-CSRFToken": csrftoken,
+                 'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(e.target.feature.properties._id['$oid'])
+
+             }) ;
+
+             data = await response.json();
+
+             data = data[0] ;
+
+             Object.keys(data).forEach(function(key) {
+                var value = data[key];
+                if (key !== '_id'){
+                const element = document.getElementById(key) ;
+                element.textContent = value ;
+                }
+             });
+
+            map.fitBounds(e.target.getBounds());
+            side_nav.style.width = "400px";
 
         }
 

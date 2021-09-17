@@ -34,6 +34,7 @@ async function handler (event) {
 
                 if(layer.feature.properties._id['$oid']===search_entry.id){
                     map.fitBounds(layer.getBounds());
+//                      zoomToFeature(layer) ;
                 };
             });
 

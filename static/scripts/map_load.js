@@ -60,9 +60,11 @@ function paint_map(){
             map.fitBounds(e.target.getBounds());
 
             const x = document.getElementById("mySidenav") ;
-            x.style.width = "500px"
-            console.log(x);
+            x.style.width = "500px";
+
         }
+
+
 
 
 

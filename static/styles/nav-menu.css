@@ -2,19 +2,20 @@
 .sidenav {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
-  position: relative ; /* Stay in place */
-  z-index: 0; /* Stay on top */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Stay on top */
+  top: 0;
+  left: 0;
   background-color: rgb(235, 235, 235);  /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 50px; /* Place content 60px from the top */
-  top:30px ;
+  padding-top: 110px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
-  position: relative;
-  top: 50px;
+  position: absolute;
+  top: 54px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
@@ -30,8 +31,4 @@
 }
 .fonty{
   font-family: 'Montserrat', sans-serif;
-}
-
-#mySidenav {
-z-index: 2000 ;
 }

@@ -1,3 +1,7 @@
+html, body {
+  margin:0px;
+  height:100%;
+}
 #search-res a {
     display: none;
     background-color: #EFFBFF;
@@ -15,11 +19,12 @@
 }
 
 #mapid {
-    display: inline-block;
-    height: 670px;
-    width: 100%;
-    position: relative;
-    z-index: 0;
+    height:655%;
+    /*display: inline-block;*/
+    /*height: 50%;*/
+    /*width: 100%;*/
+    /*position: relative;*/
+    /*z-index: 0;*/
 }
 
 #search-bar {

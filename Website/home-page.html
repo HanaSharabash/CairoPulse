@@ -24,383 +24,391 @@
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+
+    <!-- js file -->
+    <script src="home-page-app.js"></script>
+
   </head>
   <body>
 
-    
-
+   <!-- This is the navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="landing-page.html">Cairo Pulse</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact-us.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                </ul>
-                <li class="nav-item">
-                    <button type="button" class="btn btn-outline-light">
-                        Sign up
-                    </button>
-                </li>
-            </div>
+          <a class="navbar-brand" href="landing-page.html">Cairo Pulse</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact-us.html"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+            <li class="nav-item">
+              <button type="button" class="btn btn-outline-light">
+                Sign up
+              </button>
+            </li>
+          </div>
         </div>
-    </nav>
-    <!-- Use any element to open the sidenav -->
-    
-<!-- js file -->
-<script src="home-page-app.js"></script>
+      </nav>
 
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-    <div id="main">
-      <img src="images/map.jpg" alt="" />
-    </div>
+        <!-- This div represents the maps as buttons with will hold the id of the neighbourhood of which we will fetch the data -->
+      <div class="buttons">
+        <button id="tagamoAwal" class="btn btn-primary" style="position: relative; left: 700px; top: 300px;" onclick="openNav(id)">t</button>
+        <button id="rehab" class="btn btn-primary" style="position: relative; left: 700px; top: 300px;" onclick="openNav(id)">r</button>    
+      </div>
 
-
-
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <div>
-        <div class="accordion accordion-flush fonty" id="accordionFlush">
-
-
-             <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                   Educational places
-                </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Educational places">
-
-                        <div class="list-group">
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Schools
-                              <span id ="schools" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Universities
-                                <span id ="universities" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    Entertainment
-
-                </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Entertainment">
-
-                        <div class="list-group">
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Cafes
-                                <span id ="cafes" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Cinemas
-                                <span id ="cinemas" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Malls
-                                <span id ="malls" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Parks
-                                <span id ="parks" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Restaurants
-                              <span id ="restaurants" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            
-                            
-                            
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Essentials
-                </button>
-                </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Essentials">
-
-                        <div class="list-group">
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Bakery/Pastry Shops
-                                <span id ="bakery_pastry_shops" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Stores
-                                <span id ="stores" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Supermarkets
-                              <span id ="supermarkets" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            
-                          </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                    Financial Services
-                </button>
-                </h2>
-                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Financial Services">
-
-                        <div class="list-group">
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                ATMs
-                                <span id ="atms" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Banks
-                              <span id ="banks" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                           
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingFive">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                    Governmental Services
-
-                </button>
-                </h2>
-                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Governmental Services">
-
-                        <div class="list-group">
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Embassies/Consulates
-                                <span id ="embassies_consulates" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Government Offices
-                              <span id ="government_offices" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Police Stations
-                                <span id ="police" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingSix">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                    Health Services
-                </button>
-                </h2>
-                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Health Services">
-                        <div class="list-group">
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Drugstores
-                                <span id ="drugstores" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Hospitals
-                              <span id ="hospitals" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Pharmacies
-                                <span id ="pharmacies" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                          </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingSeven">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                    Personal Care
-                </button>
-                </h2>
-                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Personal Care">
-
-                        <div class="list-group">
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                                Beauty Salons
-                                <span id ="beauty_salons" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+        <!-- This is the side bar that holds the data and opens if you click the buttons above -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <div>
+          <div class="accordion accordion-flush fonty" id="accordionFlush">
+  
+  
+               <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                     Educational places
+                  </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Educational places">
+  
+                          <div class="list-group">
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Schools
+                                <span id ="schools" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                               </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Gyms
-                                <span id ="gyms" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Hair Cares
-                                <span id ="hair_cares" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingEight">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
-                    Touristic places
-                </button>
-                </h2>
-                <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Touristic places">
-
-                        <div class="list-group">
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Landmarks
-                                <span id ="landmarks" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Libraries
-                              <span id ="libraries" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Museums
-                                <span id ="museums" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingNine">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
-                    Transportation
-                </button>
-                </h2>
-                <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Transportation">
-
-                        <div class="list-group">
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Bus Stations
-                              <span id ="bus_stations" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Subway Stations
-                                <span id ="subway_stations" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTen">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
-                    Worship places
-                </button>
-                </h2>
-                <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Worship places">
-
-                        <div class="list-group">
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Churches
-                              <span id ="churches" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Mosques
-                                <span id ="mosques" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-            
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingEleven">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
-                    Others
-
-                </button>
-                </h2>
-                <div id="flush-collapseEleven" class="accordion-collapse collapse" aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body" id="Touristic places">
-
-                        <div class="list-group">
-                            <button class="btn-lg list-group-item list-group-item-action toggle" >
-                              Gas Stations
-                              <span id ="gas_stations" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Hardware Stores
-                                <span id ="hardware_stores" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Parkings
-                                <span id ="parkings" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Car Services
-                                <span id ="car_services" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                            <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                Hotels
-                                <span id ="hotels" class="badge bg-dark ms-auto rounded-pill"></span>
-                            </button>
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-
-
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Universities
+                                  <span id ="universities" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Entertainment
+  
+                  </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Entertainment">
+  
+                          <div class="list-group">
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Cafes
+                                  <span id ="cafes" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Cinemas
+                                  <span id ="cinemas" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Malls
+                                  <span id ="malls" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Parks
+                                  <span id ="parks" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Restaurants
+                                <span id ="restaurants" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              
+                              
+                              
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Essentials
+                  </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Essentials">
+  
+                          <div class="list-group">
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Bakery/Pastry Shops
+                                  <span id ="bakery_pastry_shops" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Stores
+                                  <span id ="stores" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Supermarkets
+                                <span id ="supermarkets" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              
+                            </div>
+  
+  
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                      Financial Services
+                  </button>
+                  </h2>
+                  <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Financial Services">
+  
+                          <div class="list-group">
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  ATMs
+                                  <span id ="atms" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Banks
+                                <span id ="banks" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                             
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                      Governmental Services
+  
+                  </button>
+                  </h2>
+                  <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Governmental Services">
+  
+                          <div class="list-group">
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Embassies/Consulates
+                                  <span id ="embassies_consulates" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Government Offices
+                                <span id ="government_offices" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Police Stations
+                                  <span id ="police" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                      Health Services
+                  </button>
+                  </h2>
+                  <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Health Services">
+                          <div class="list-group">
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Drugstores
+                                  <span id ="drugstores" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Hospitals
+                                <span id ="hospitals" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Pharmacies
+                                  <span id ="pharmacies" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                      Personal Care
+                  </button>
+                  </h2>
+                  <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Personal Care">
+  
+                          <div class="list-group">
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                  Beauty Salons
+                                  <span id ="beauty_salons" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                                </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Gyms
+                                  <span id ="gyms" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Hair Cares
+                                  <span id ="hair_cares" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingEight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                      Touristic places
+                  </button>
+                  </h2>
+                  <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Touristic places">
+  
+                          <div class="list-group">
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Landmarks
+                                  <span id ="landmarks" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Libraries
+                                <span id ="libraries" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Museums
+                                  <span id ="museums" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingNine">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                      Transportation
+                  </button>
+                  </h2>
+                  <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Transportation">
+  
+                          <div class="list-group">
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Bus Stations
+                                <span id ="bus_stations" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Subway Stations
+                                  <span id ="subway_stations" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+  
+  
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTen">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                      Worship places
+                  </button>
+                  </h2>
+                  <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Worship places">
+  
+                          <div class="list-group">
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Churches
+                                <span id ="churches" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Mosques
+                                  <span id ="mosques" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingEleven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                      Others
+  
+                  </button>
+                  </h2>
+                  <div id="flush-collapseEleven" class="accordion-collapse collapse" aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body" id="Touristic places">
+  
+                          <div class="list-group">
+                              <button class="btn-lg list-group-item list-group-item-action toggle" >
+                                Gas Stations
+                                <span id ="gas_stations" class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Hardware Stores
+                                  <span id ="hardware_stores" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Parkings
+                                  <span id ="parkings" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Car Services
+                                  <span id ="car_services" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                              <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                  Hotels
+                                  <span id ="hotels" class="badge bg-dark ms-auto rounded-pill"></span>
+                              </button>
+                            </div>
+  
+                      </div>
+                  </div>
+              </div>
+  
+  
+          </div>
         </div>
       </div>
-    </div>
-
+    
     
 
     

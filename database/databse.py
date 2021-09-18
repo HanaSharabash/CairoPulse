@@ -92,15 +92,18 @@ def search_neighborhoods (search_key):
 def get_categories (id):
 
     bsonid = ObjectId(id)
-    print(bsonid)
+
+    x = {
+                d : {"$size" : '$'+d } for d in fields
+            }
+
+    x.update({'name_EN':1})
     res = db.neighbourhoods.aggregate([
         {
           "$match" : {"_id" : bsonid }
         },
         {
-            "$project" : {
-                d : {"$size" : '$'+d } for d in fields
-            }
+            "$project" : x
         }
     ])
 

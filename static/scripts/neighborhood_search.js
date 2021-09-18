@@ -1,5 +1,7 @@
 const search_bar = document.getElementById('search-bar') ;
 const csrftoken = getCookie('csrftoken');
+const search_res = document.getElementById('search-res') ;
+const map_grid = document.getElementById('mapid') ;
 
 
 search_bar.addEventListener ('keydown',function (e) {
@@ -35,7 +37,7 @@ async function handler (event) {
                      zoom(layer) ;
                 };
             });
-
+            search_res.innerHTML = ''
          })
          div.appendChild(search_entry) ;
       }
@@ -73,3 +75,9 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
+
+map_grid.addEventListener('click', function(event){
+  document.getElementById('mySidenav').style.width = '0';
+
+});

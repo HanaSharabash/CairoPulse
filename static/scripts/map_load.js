@@ -73,9 +73,11 @@ async function paint_map(){
 
              data = data[0] ;
 
+
+             document.getElementById('neighborhood-name').innerHTML = data['name_EN'];
              Object.keys(data).forEach(function(key) {
                 var value = data[key];
-                if (key !== '_id'){
+                if (!(key === '_id' || key === 'name_EN')){
                 const element = document.getElementById(key) ;
                 element.textContent = value ;
                 }

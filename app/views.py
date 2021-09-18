@@ -36,5 +36,4 @@ def  get_categories(request):
     body_unicode = request.body.decode('utf-8')
     body = json.loads(body_unicode)
     data = databse.get_categories(body)
-    print(data)
     return JsonResponse(data,safe=False)

@@ -8,14 +8,14 @@ client =  MongoClient('mongodb+srv://CairoPulse:CairoPulse@cluster0.538hc.mongod
 db = client['cairo_pulse']
 
 fields = []
-for i in list(db.neighbourhoods.find_one({})):
+for i in list(db.neighborhoods.find_one({})):
     if not i in ['_id','name_AR','name_EN','geometry','vibrancy']:
         fields.append(i)
 
 
 
 def get_neighbourhoods():
-    res = db.neighbourhoods.aggregate([{
+    res = db.neighborhoods.aggregate([{
         "$project" : {
             "name_EN" : 1,
             "name_AR" : 1,
@@ -23,7 +23,6 @@ def get_neighbourhoods():
             'vibrancy' : 1,
         }
     }])
-
 
     res = parse_json(list(res))
 
@@ -42,7 +41,6 @@ def get_neighbourhoods():
 
             } for d in res]
     }
-
     return geojson
 
 def search_neighborhoods (search_key):
@@ -65,15 +63,8 @@ def search_neighborhoods (search_key):
     regex = re.compile('^.*'+search_key+'.*$|'+stringmissing+"|"+"^.{1,3}"+search_key[3:len(search_key)]+"$|"+stringmore, re.IGNORECASE)
 
 
-    res =   db.neighbourhoods.aggregate([{"$match": {
-        "$or": [
-            {
-                "$text" : {"$search" : search_key}
-            },
-            {
-                "name_EN" : {"$regex" : regex}
-            }
-        ]
+    res =   db.neighborhoods.aggregate([{"$match": {
+            "name_EN": {"$regex": regex}
     }},
                                        {"$project":{
                                            "name_EN": 1,
@@ -98,7 +89,7 @@ def get_categories (id):
             }
 
     x.update({'name_EN':1})
-    res = db.neighbourhoods.aggregate([
+    res = db.neighborhoods.aggregate([
         {
           "$match" : {"_id" : bsonid }
         },
@@ -112,5 +103,4 @@ def get_categories (id):
 
 def parse_json(data):
     return json.loads(json_util.dumps(data))
-
 

@@ -2,6 +2,7 @@ import json
 from django.shortcuts import render,HttpResponse
 from database import databse
 from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 from django.http import Http404
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 

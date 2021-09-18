@@ -17,7 +17,7 @@ async function handler (event) {
             method: 'POST',
             headers: {
                  "X-CSRFToken": csrftoken,
-                 'Content-Type': 'application/json',
+                 'Content-Type': 'applicati     on/json',
             },
             body: JSON.stringify(search_bar.value)
 
@@ -79,5 +79,5 @@ function getCookie(name) {
 
 map_grid.addEventListener('click', function(event){
   document.getElementById('mySidenav').style.width = '0';
-
+  document.getElementById('search-res').innerHTML = '';
 });

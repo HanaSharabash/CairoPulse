@@ -1,5 +1,4 @@
 const search_bar = document.getElementById('search-bar') ;
-const csrftoken = getCookie('csrftoken');
 const search_res = document.getElementById('search-res') ;
 const map_grid = document.getElementById('mapid') ;
 
@@ -16,7 +15,7 @@ async function handler (event) {
         const response = await fetch( '/search_neighborhoods' , {
             method: 'POST',
             headers: {
-                 "X-CSRFToken": csrftoken,
+            'X-CSRFToken': csrftoken ,
                  'Content-Type': 'applicati     on/json',
             },
             body: JSON.stringify(search_bar.value)
@@ -60,6 +59,19 @@ function searchEventListener () {
     search_bar.addEventListener('click',handler) ;
 }
 
+
+map_grid.addEventListener('click', function(event){
+  document.getElementById('mySidenav').style.width = '0';
+  document.getElementById('search-res').innerHTML = '';
+});
+
+
+
+
+
+
+
+
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -75,9 +87,4 @@ function getCookie(name) {
     }
     return cookieValue;
 }
-
-
-map_grid.addEventListener('click', function(event){
-  document.getElementById('mySidenav').style.width = '0';
-  document.getElementById('search-res').innerHTML = '';
-});
+const csrftoken = getCookie('csrftoken');

@@ -20,19 +20,16 @@ def about (request) :
 def map (request):
         return render(request , 'map.html')
 
-@csrf_exempt
 def search_nighborhoods (request):
     body_unicode = request.body.decode('utf-8')
     body = json.loads(body_unicode)
     data = databse.search_neighborhoods(body)
     return JsonResponse(data, safe=False)
 
-@csrf_exempt
 def get_geometries(request):
     data = databse.get_neighbourhoods()
     return JsonResponse(data,safe=False)
 
-@csrf_exempt
 def  get_categories(request):
     body_unicode = request.body.decode('utf-8')
     body = json.loads(body_unicode)

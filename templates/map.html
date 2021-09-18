@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{% static 'scripts/leaflet/leaflet.css' %}"/>
 <link rel="stylesheet" href="{% static 'styles/map.css' %}">
 <link rel="stylesheet" href="{% static 'styles/nav-menu.css' %}">
+{% csrf_token %}
 <script type="text/javascript" src="{% static 'scripts/map_load.js' %}"></script>
 <script src="{% static 'scripts/leaflet/leaflet.js' %}"></script>
 
@@ -409,7 +410,7 @@
 
 </div>
 
-
+{% csrf_token %}
 <script src="{% static 'scripts/neighborhood_search.js' %}"></script>
 
 

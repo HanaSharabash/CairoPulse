@@ -61,7 +61,7 @@ async function paint_map(){
            const response = await fetch( '/get-categories' , {
             method: 'POST',
             headers: {
-                 "X-CSRFToken": csrftoken,
+            'X-CSRFToken': csrftoken,
                  'Content-Type': 'application/json',
             },
             body: e.target?JSON.stringify(e.target.feature.properties._id['$oid']):JSON.stringify(e.feature.properties._id['$oid'])

@@ -57,12 +57,11 @@ async function paint_map(){
         }
 
          zoom = async function zoomToFeature(e) {
-            console.log(e);
            const side_nav = document.getElementById("mySidenav") ;
            const response = await fetch( '/get-categories' , {
             method: 'POST',
             headers: {
-                 "X-CSRFToken": csrftoken,
+            'X-CSRFToken': csrftoken,
                  'Content-Type': 'application/json',
             },
             body: e.target?JSON.stringify(e.target.feature.properties._id['$oid']):JSON.stringify(e.feature.properties._id['$oid'])
@@ -74,7 +73,7 @@ async function paint_map(){
              data = data[0] ;
 
 
-             document.getElementById('neighborhood-name').innerHTML = data['name_EN'];
+                   document.getElementById('neighborhood-name').innerHTML = data['name_EN'];
              Object.keys(data).forEach(function(key) {
                 var value = data[key];
                 if (!(key === '_id' || key === 'name_EN')){
@@ -161,7 +160,6 @@ async function paint_map(){
     map.attributionControl.addAttribution('Copyrights &copy; <a href="https://github.com/HanaSharabash/CairoPulse">Cairo Pulse</a>');
 
 
-    console.log(districts) ;
         geojson = L.geoJson(districts, {
             style: style,
             onEachFeature: onEachFeature
@@ -189,7 +187,6 @@ async function get_geometries (){
 window.addEventListener('load' , async function (event) {
 
       districts = await get_geometries() ;
-      console.log(districts) ;
       await paint_map();
       searchEventListener() ;
 });

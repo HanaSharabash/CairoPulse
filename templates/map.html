@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{% static 'scripts/leaflet/leaflet.css' %}"/>
 <link rel="stylesheet" href="{% static 'styles/map.css' %}">
 <link rel="stylesheet" href="{% static 'styles/nav-menu.css' %}">
+{% csrf_token %}
 <script type="text/javascript" src="{% static 'scripts/map_load.js' %}"></script>
 <script src="{% static 'scripts/leaflet/leaflet.js' %}"></script>
 
@@ -206,14 +207,15 @@
                                  aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body" id="Health Services">
                                     <div class="list-group">
-                                        <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                            Drugstores
-                                            <span id="drugstores" class="badge bg-dark ms-auto rounded-pill"></span>
-                                        </button>
+
                                         <button class="btn-lg list-group-item list-group-item-action toggle">
                                             Hospitals
                                             <span id="hospitals"
                                                   class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
+                                        </button>
+                                        <button class="btn-lg link-dark list-group-item list-group-item-action">
+                                            Medical care
+                                            <span id="medical_care" class="badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
                                         <button class="btn-lg link-dark list-group-item list-group-item-action">
                                             Pharmacies
@@ -243,12 +245,12 @@
                                                   class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
                                         <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                            Gyms
-                                            <span id="gyms" class="badge bg-dark ms-auto rounded-pill"></span>
+                                            Clubs
+                                                <span id="clubs" class="badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
                                         <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                            Hair Cares
-                                            <span id="hair_cares" class="badge bg-dark ms-auto rounded-pill"></span>
+                                            Gyms
+                                            <span id="gyms" class="badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
 
                                     </div>
@@ -271,18 +273,15 @@
 
                                     <div class="list-group">
                                         <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                            Landmarks
-                                            <span id="landmarks" class="badge bg-dark ms-auto rounded-pill"></span>
+                                            Touristic places
+                                            <span id="touristic_places" class="badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
                                         <button class="btn-lg list-group-item list-group-item-action toggle">
                                             Libraries
                                             <span id="libraries"
                                                   class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
-                                        <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                            Museums
-                                            <span id="museums" class="badge bg-dark ms-auto rounded-pill"></span>
-                                        </button>
+
                                     </div>
 
                                 </div>
@@ -366,17 +365,13 @@
                                             <span id="gas_stations"
                                                   class="ms-auto badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
-                                        <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                            Hardware Stores
-                                            <span id="hardware_stores"
-                                                  class="badge bg-dark ms-auto rounded-pill"></span>
-                                        </button>
+
                                         <button class="btn-lg link-dark list-group-item list-group-item-action">
                                             Parkings
                                             <span id="parkings" class="badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
                                         <button class="btn-lg link-dark list-group-item list-group-item-action">
-                                            Car Services
+                                              Car Services
                                             <span id="car_services" class="badge bg-dark ms-auto rounded-pill"></span>
                                         </button>
                                         <button class="btn-lg link-dark list-group-item list-group-item-action">
@@ -417,7 +412,7 @@
 
 </div>
 
-
+{% csrf_token %}
 <script src="{% static 'scripts/neighborhood_search.js' %}"></script>
 
 

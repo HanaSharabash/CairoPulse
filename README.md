@@ -122,3 +122,5 @@ In this phase we did the following pipeline process:
 3. Removing unnecessary fields
 
 ## Phase 3: Database setup:
+
+## Phase 4: Machine learning model for clustring

@@ -13,12 +13,12 @@
 }
 
 /* Position and style the close button (top right corner) */
-.sidenav .closesbtn {
+.sidenav a {
   position: absolute;
   top: 60px;
   right: 30px;
   font-size: 36px;
-  /*margin-left: 50px;*/
+  margin-left: 50px;
   text-decoration: none;
   color: black;
 }

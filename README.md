@@ -114,13 +114,14 @@ for i in areas:
 
 
 ## Phase 2: Data filtration:
-##
-In this phase we did the following pipeline process:
+### In this phase we did the following pipeline process:
 
 1. Grouping the data by the points of interest that the data of a specific point of interest is grouped from the data of 87 neighborhoods' data. 
 2. Removing duplicates from the data collected
 3. Removing unnecessary fields
 
 ## Phase 3: Database setup:
+### 
 
 ## Phase 4: Machine learning model for clustring
+### 

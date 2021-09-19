@@ -113,7 +113,7 @@ for i in areas:
 
 
 
-##Phase 2: Data filtration:
+## Phase 2: Data filtration:
 ##
 In this phase we did the following pipeline process:
 
@@ -121,4 +121,4 @@ In this phase we did the following pipeline process:
 2. Removing duplicates from the data collected
 3. Removing unnecessary fields
 
-##Phase 3: Database setup:
+## Phase 3: Database setup:

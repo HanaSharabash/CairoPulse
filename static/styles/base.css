@@ -1,4 +1,4 @@
-#header1 {
+header {
     position: relative;
     background-color: black;
     height: 94.3vh;
@@ -6,15 +6,6 @@
     width: 100%;
     overflow: hidden;
   }
-
-#mapid {
-    position: relative;
-    height: 94vh;
-    min-height: 25rem;
-    width: 100%;
-    overflow: hidden;
-  }
-
   header video {
     position: absolute;
     top: 50%;

@@ -35,3 +35,9 @@ def  get_categories(request):
     body = json.loads(body_unicode)
     data = databse.get_categories(body)
     return JsonResponse(data,safe=False)
+
+def get_poi_data (request) :
+    body_unicode = request.body.decode('utf-8')
+    body = json.loads(body_unicode)
+    data = databse.get_poi_data(body['id'] , body['poi'])
+    return  JsonResponse(data , safe=False)

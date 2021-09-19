@@ -7,12 +7,13 @@ import re
 client =  MongoClient('mongodb+srv://CairoPulse:CairoPulse@cluster0.538hc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 db = client['cairo_pulse']
 
+
 fields = []
 for i in list(db.neighborhoods.find_one({})):
     if not i in ['_id','name_AR','name_EN','geometry','vibrancy']:
         fields.append(i)
 
-print('hahah')
+
 
 def get_neighbourhoods():
     res = db.neighborhoods.aggregate([{
@@ -98,6 +99,26 @@ def get_categories (id):
         }
     ])
 
+    return parse_json(res)
+
+
+
+def get_poi_data (id , poi ):
+
+    neighborhood = db.neighborhoods.find_one({'_id':ObjectId(id)})
+    res = db[poi].aggregate([
+        {
+            "$match": {
+            "_id":{"$in": neighborhood[poi]}
+            }
+        },
+        {
+            "$project":{
+                'name' : 1 ,
+                'location' : 1
+            }
+        }
+    ])
     return parse_json(res)
 
 

@@ -1,6 +1,7 @@
 var districts ;
 var geojson ;
 var map ;
+var fields= ['medical_care', 'gyms', 'banks', 'car_services', 'universities', 'cafes', 'beauty_salons', 'hotels', 'clubs', 'embassies_consulates', 'parks', 'subway_stations', 'stores', 'parkings', 'bus_stations', 'pharmacies', 'government_offices', 'malls', 'gas_stations', 'atms', 'schools', 'supermarkets', 'touristic_places', 'restaurants', 'police', 'libraries', 'bakery_pastry_shops', 'mosques', 'cinemas', 'hospitals', 'churches']
 
 async function paint_map(){
       map = L.map('mapid').setView([30.0444, 31.2357 ], 11);
@@ -73,18 +74,19 @@ async function paint_map(){
              data = data[0] ;
 
 
-                   document.getElementById('neighborhood-name').innerHTML = data['name_EN'];
+             document.getElementById('neighborhood-name').innerHTML = data['name_EN'];
+             document.getElementById('neighborhood-name').setAttribute('neighborhoodid',e.target?e.target.feature.properties._id['$oid']:e.feature.properties._id['$oid'])
              Object.keys(data).forEach(function(key) {
                 var value = data[key];
                 if (!(key === '_id' || key === 'name_EN')){
                 const element = document.getElementById(key) ;
                 element.textContent = value ;
+
                 }
              });
 
             map.fitBounds(e.target?e.target.getBounds():e.getBounds());
             side_nav.style.width = "400px";
-
 
 
         }
@@ -192,9 +194,6 @@ window.addEventListener('load' , async function (event) {
       await paint_map();
       searchEventListener() ;
 });
-
-
-
 
 
 

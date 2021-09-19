@@ -419,6 +419,8 @@
 
 {% csrf_token %}
 <script src="{% static 'scripts/neighborhood_search.js' %}"></script>
+{% csrf_token %}
+<script type="text/javascript" src="{% static 'scripts/pin-map.js' %}"></script>
 
 
 {% endblock %}

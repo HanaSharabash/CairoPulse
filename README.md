@@ -132,7 +132,7 @@ We established the hypothesis that `Vibrancy` will be measured as `How Many peop
 To calculate that, We resembled the `number of people` as the number of points of interest in the neighborhood and gave them different weights according to the type of the point of interest and how many people would exist there (e.g. The number of people at the mall is usually larger than the number of people at the gym so the weight of the mall to represent the number of people will be greater than that of the gym.).
 We calculated this equation based on the weighted sum and divided by the area of the neighborhood to get the density per unit area and considered that to be the first feature to our neighborhoods.
 The second feature was the same feature except we didn't give the points of interest any weights. That's to avoid some of the wrong weitghts that might have been assigned in a wrong way and we considered that to be the second feature of our neighborhoods.
-### The method & implementation:
+### The Method & Implementation:
 We used `k-means` algorithm from `scikit learn` package in python to have 7 different clusters and we gave them levels of vibrancy according to the two features we had and what they represented (number of people per unit area in a neighborhood).
 ### N.B.
 The code including the wights of the points of interest and plotting of the data exists in the file `ML_code.py` and the result of the clustering is in `result.json`.

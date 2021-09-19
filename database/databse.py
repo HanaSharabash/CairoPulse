@@ -12,7 +12,7 @@ for i in list(db.neighborhoods.find_one({})):
     if not i in ['_id','name_AR','name_EN','geometry','vibrancy']:
         fields.append(i)
 
-
+print('hahah')
 
 def get_neighbourhoods():
     res = db.neighborhoods.aggregate([{

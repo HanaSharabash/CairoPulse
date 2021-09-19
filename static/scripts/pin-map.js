@@ -18,13 +18,13 @@ fields.forEach(function (poi) {
             })
         }) ;
         data = await response.json() ;
+
+        markers.forEach(function(marker){
+            map.removeLayer(marker);
+        })
         console.log(data);
         data.forEach(function(point){
-            console.log("point");
-            console.log(point.location.coordinates);
             var marker = L.marker([point.location.coordinates[1],point.location.coordinates[0]]);
-            // console.log(marker._icon);
-            // marker._icon.style.filter = "hue-rotate("+fields.indexOf(poi)*11+"deg)";
             marker.bindPopup(point.name);
             marker.on('mouseover', function (e) {
                 this.openPopup();
@@ -32,11 +32,10 @@ fields.forEach(function (poi) {
             marker.on('mouseout', function (e) {
                 this.closePopup();
             });
+            markers.push(marker);
             marker.addTo(map);
+            marker._icon.style.filter = "hue-rotate("+fields.indexOf(poi)*11+"deg)";
         })
-        // console.log(marker._icon.style)
-
-
 
 
   });

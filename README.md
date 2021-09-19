@@ -123,5 +123,5 @@ for i in areas:
 ## Phase 3: Database setup:
 ### 
 
-## Phase 4: Machine learning model for clustring
-### 
+## Phase 4: Machine learning model for clustering
+#### The objective:

@@ -85,6 +85,8 @@ async function paint_map(){
             map.fitBounds(e.target?e.target.getBounds():e.getBounds());
             side_nav.style.width = "400px";
 
+
+
         }
 
 

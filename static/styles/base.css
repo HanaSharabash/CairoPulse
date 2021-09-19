@@ -1,7 +1,15 @@
-header {
+#header1 {
     position: relative;
     background-color: black;
-    height: 95vh;
+    height: 94.3vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+#mapid {
+    position: relative;
+    height: 94vh;
     min-height: 25rem;
     width: 100%;
     overflow: hidden;

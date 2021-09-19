@@ -126,7 +126,7 @@ for i in areas:
 ## Phase 4: Machine learning model for clustering
 ### The Objective:
 The goal was to have different neighborhoods in Cairo having different level of `Vibrancy` based on urban indicators we collected in the data phase.
-#### The Hypothesis:
+### The Hypothesis:
 We established the hypothesis that `Vibrancy` will be measured as `How Many people exist in this neighborhood per unit area`.
 ### The Approach:
 To calculate that We resembled the `number of people` as the number of points of interest in the neighborhood and gave them different weights according to type of the point of interest and how many people would exist there (e.g. The number of people at the mall is usually larger than the number of people at the gym so the weight of the mall to represent the number of people will be greater than that of the gym.).

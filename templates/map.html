@@ -9,20 +9,22 @@
 <script src="{% static 'scripts/leaflet/leaflet.js' %}"></script>
 
 
-<div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="function closeNav() {
+<div id="mySidenav" class="sidenav" style="padding-top: 40px;">
+
+                <div>
+                    <div class="accordion accordion-flush fonty" id="accordionFlush" style="margin-top: 25px;">
+
+
+                        <div class="fonty" style="font-size: 2rem; margin: 5px 20px 8px 57px; " id="neighborhood-name">
+
+                        </div>
+                         <a href="javascript:void(0)" class="closebtn" onclick="function closeNav() {
                         document.getElementById('mySidenav').style.width = '0';
 
                 }
                 closeNav()"
                 >&times;</a
                 >
-                <div>
-                    <div class="accordion accordion-flush fonty" id="accordionFlush" style="margin-top: 25px;">
-
-                        <div class="fonty" id="neighborhood-name">
-
-                        </div>
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">

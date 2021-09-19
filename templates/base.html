@@ -32,7 +32,9 @@
           <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navigation-bar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="home">Cairo Pulse</a>
+          <a class="navbar-brand" href="home">
+            <img src="static/images/logo.png"  width="210" height="auto" style="margin-left: 1.2rem;" class="d-inline-block align-text-top">
+          </a>
 
           {% block search %}
           {% endblock %}
@@ -59,12 +61,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="about">About</a>
               </li>
-            </ul>
-            <li class="nav-item">
-              <button type="button" class="btn btn-outline-light">
+              <li class="nav-item">
+              <button type="button" style="margin-left: 0rem;" class="btn btn-outline-light">
                 Sign up
               </button>
-            </li>
+              </li>
+            </ul>
+
 
           </div>
         </div>

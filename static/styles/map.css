@@ -30,7 +30,7 @@
 
 #search-div {
     position: relative;
-    z-index: 2000;
+    z-index: 999;
     top: 50px;
     width: 500px;
     height: 120px;
@@ -63,3 +63,4 @@
     margin-right: 8px;
     opacity: 0.7;
 }
+

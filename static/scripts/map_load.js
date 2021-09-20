@@ -70,13 +70,12 @@ async function paint_map(){
              }) ;
 
              data = await response.json();
-
              data = data[0] ;
-
 
              document.getElementById('neighborhood-name').innerHTML = data['name_EN'];
              document.getElementById('neighborhood-name').setAttribute('neighborhoodid',e.target?e.target.feature.properties._id['$oid']:e.feature.properties._id['$oid'])
              Object.keys(data).forEach(function(key) {
+
                 var value = data[key];
                 if (!(key === '_id' || key === 'name_EN')){
                 const element = document.getElementById(key) ;

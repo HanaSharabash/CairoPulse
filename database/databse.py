@@ -8,11 +8,8 @@ client =  MongoClient('mongodb+srv://CairoPulse:CairoPulse@cluster0.538hc.mongod
 db = client['cairo_pulse']
 
 
-fields = []
-for i in list(db.neighborhoods.find_one({})):
-    if not i in ['_id','name_AR','name_EN','geometry','vibrancy']:
-        fields.append(i)
-
+fields =  list(db.collection_names(include_system_collections=False))
+fields.remove('neighborhoods')
 
 
 def get_neighbourhoods():
@@ -89,7 +86,9 @@ def get_categories (id):
                 d : {"$size" : '$'+d } for d in fields
             }
 
+
     x.update({'name_EN':1})
+ 
     res = db.neighborhoods.aggregate([
         {
           "$match" : {"_id" : bsonid }
@@ -99,17 +98,22 @@ def get_categories (id):
         }
     ])
 
+#    res = {}
+#    for i in fields:
+#       res[i] = db[i].find({"neighborhood" : bsonid}).count()
+#    temp = db.neighborhoods.find_one(bsonid)
+#    res['name_EN'] = temp['name_EN']
+#    res['_id'] = temp['_id']
     return parse_json(res)
 
 
 
 def get_poi_data (id , poi ):
 
-    neighborhood = db.neighborhoods.find_one({'_id':ObjectId(id)})
     res = db[poi].aggregate([
         {
             "$match": {
-            "_id":{"$in": neighborhood[poi]}
+              "neighborhood" : ObjectId(id)
             }
         },
         {

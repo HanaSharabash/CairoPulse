@@ -1,7 +1,7 @@
 var markers = new Array();
 fields.forEach(function (poi) {
 
-    const element_poi = document.getElementById(poi);
+    const element_poi = document.getElementById(poi+'-button');
 
     element_poi.addEventListener('click' , async function(event){
         const x = document.getElementById('neighborhood-name') ;

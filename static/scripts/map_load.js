@@ -7,6 +7,7 @@ async function paint_map() {
     map = L.map('mapid').setView([30.0444, 31.2357], 11);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        attributionControl: false,
         maxZoom: 30,
         id: 'mapbox/streets-v11',
         tileSize: 512,
@@ -16,26 +17,6 @@ async function paint_map() {
 
     var popup = L.popup();
 
-    L.Control.Custom = L.Control.extend({
-        options: {
-            position: "bottomleft"
-        },
-        
-        initialize(options) {
-            L.setOptions(this, options);
-        },
-        onAdd: function (map) {
-            this._div = L.DomUtil.create('div', 'infoq');
-            this.update();
-            return this._div;
-        },
-        update: function(myMap) {
-            this._div.innerHTML = '<div class="d-flex bd-highlight"><div class="ms-auto p-2 bd-highlight" style="z-index: 10;"><button type="button" class="btn" data-bs-toggle="tooltip"data-bs-placement="left" title="click on a neighborhood or search for it to see its info."><i class="far fa-question-circle fa-2x"></i></button></div></div>';
-            return this._div;
-        },
-    });
-    
-    
     var info = L.control();
     
     info.onAdd = function (map) {
@@ -146,7 +127,6 @@ async function paint_map() {
 
     var legend = L.control({position: 'bottomright'});
 
-
     legend.onAdd = function (map) {
 
         var div = L.DomUtil.create('div', 'info legend'),
@@ -157,16 +137,9 @@ async function paint_map() {
         for (var i = 0; i < grades.length; i++) {
             from = grades[i];
             to = grades[i + 1];
-
-            labels.push(
-                '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                from + (to ? '&ndash;' + to : '+'));
+            labels.push('<i style="background:' + getColor(from + 1) + '"></i> ' + (from==1?'<b>Lowest</b>':(from==6?'<b>Highest</b>':'')));
         }
 
-
-
-
-        
         div.innerHTML = '<b>Vibrancy Levels:</b><br>' + '<div>' + labels.join('<br>') + '</div>';
 
         return div;
@@ -174,7 +147,29 @@ async function paint_map() {
 
     legend.addTo(map);
 
-    info2=new L.Control.Custom({position: 'bottomright'}).addTo(map);
+
+    var questionMark = L.control({position: 'bottomright'});
+
+    questionMark.onAdd = function (map) {
+
+        var div = L.DomUtil.create('div', 'infoq')
+        div.innerHTML = '<div class="d-flex bd-highlight"><div class="ms-auto p-2 bd-highlight" style="z-index: 10;"><button type="button" class="btn" data-bs-toggle="tooltip"data-bs-placement="left" title="click on a neighborhood or search for it to see its info."><i class="far fa-question-circle fa-2x"></i></button></div></div>';
+        return div;
+    };
+    questionMark.addTo(map)
+
+
+    var how = L.control({position: 'bottomleft'});
+
+    how.onAdd = function (map) {
+
+        var div = L.DomUtil.create('div', 'info how')
+        div.innerHTML = 'How did we build this map?';
+        return div;
+    };
+    how.addTo(map)
+
+
 
 
     map.attributionControl.addAttribution('Copyrights &copy; <a href="https://github.com/HanaSharabash/CairoPulse">Cairo Pulse</a>');

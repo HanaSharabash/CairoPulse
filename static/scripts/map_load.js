@@ -16,9 +16,28 @@ async function paint_map() {
 
     var popup = L.popup();
 
-
+    L.Control.Custom = L.Control.extend({
+        options: {
+            position: "bottomleft"
+        },
+        
+        initialize(options) {
+            L.setOptions(this, options);
+        },
+        onAdd: function (map) {
+            this._div = L.DomUtil.create('div', 'infoq');
+            this.update();
+            return this._div;
+        },
+        update: function(myMap) {
+            this._div.innerHTML = '<div class="d-flex bd-highlight"><div class="ms-auto p-2 bd-highlight" style="z-index: 10;"><button type="button" class="btn" data-bs-toggle="tooltip"data-bs-placement="left" title="click on a neighborhood or search for it to see its info."><i class="far fa-question-circle fa-2x"></i></button></div></div>';
+            return this._div;
+        },
+    });
+    
+    
     var info = L.control();
-
+    
     info.onAdd = function (map) {
         this._div = L.DomUtil.create('div', 'info');
         this.update();
@@ -27,11 +46,11 @@ async function paint_map() {
 
     info.update = function (props) {
         this._div.innerHTML = '<h4>District Properties</h4>' +
-            (props ? '<b>' + props.name_AR + '</b> <br> <b>' + props.name_EN + '</b>' : 'Hover over a District');
+        (props ? '<b>' + props.name_AR + '</b> <br> <b>' + props.name_EN + '</b>' : 'Hover over a District');
     };
-
+    
     info.addTo(map);
-
+    
 
     function highlightFeature(e) {
         var layer = e.target;
@@ -144,12 +163,19 @@ async function paint_map() {
                 from + (to ? '&ndash;' + to : '+'));
         }
 
+
+
+
+        
         div.innerHTML = '<b>Vibrancy Levels:</b><br>' + '<div>' + labels.join('<br>') + '</div>';
 
         return div;
     };
 
     legend.addTo(map);
+
+    info2=new L.Control.Custom({position: 'bottomright'}).addTo(map);
+
 
     map.attributionControl.addAttribution('Copyrights &copy; <a href="https://github.com/HanaSharabash/CairoPulse">Cairo Pulse</a>');
 

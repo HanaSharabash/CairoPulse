@@ -1,0 +1,80 @@
+
+#search-res a {
+    display: none;
+    background-color: #EFFBFF;
+    min-width: 230px;
+    border: 1px solid #ddd;
+    z-index: 1;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#search-res a:hover {
+    background-color: #f1f2ff
+}
+
+#mapid {
+    position: relative;
+    height: 94vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+#search-bar {
+    height: 45px;
+    margin-bottom: 5px;
+}
+
+#search-div {
+    position: relative;
+    z-index: 999;
+    top: 50px;
+    width: 500px;
+    height: 120px;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.infoq {
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0);
+    padding-right: 5%;
+}
+
+.leaflet-top{
+    z-index:1500
+}
+
+
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    text-align: left;
+    line-height: 22px;
+    color: #555;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+
+

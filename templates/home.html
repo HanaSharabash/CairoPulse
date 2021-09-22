@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<link href="{% static 'styles/home.css' %}" rel="stylesheet">
+    <div>
+      <header id="header1" style=" height: 94.3vh;">
+        <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+        <div class="overlay"></div>
+
+        <!-- The HTML5 video element that will create the background video on the header -->
+        <video
+          playsinline="playsinline"
+          autoplay="autoplay"
+          muted="muted"
+          loop="loop"
+        >
+          <source
+            src="{% static 'videos/people-walking.mp4' %}"
+            type="video/mp4"
+          />
+        </video>
+
+        <!-- The header content -->
+        <div class="container h-100">
+          <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+              <h1 class="display-1">Cairo Pulse</h1>
+              <p class="lead mb-0">A beta website that shows different urban indicators and vibrancy levels in Cairo.</p>
+              <a href="map">
+              <button type="button"   class="btn btn-outline-light btn-lg m-3">
+                Get Started
+              </button>
+                </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    </div>
+{% endblock %}

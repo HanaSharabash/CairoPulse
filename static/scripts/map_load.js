@@ -148,7 +148,7 @@ async function paint_map() {
     legend.addTo(map);
 
 
-    var questionMark = L.control({position: 'bottomright'});
+    var questionMark = L.control({position: 'bottomleft'});
 
     questionMark.onAdd = function (map) {
 
@@ -156,20 +156,20 @@ async function paint_map() {
         div.innerHTML = '<div class="d-flex bd-highlight"><div class="ms-auto p-2 bd-highlight" style="z-index: 10;"><button type="button" class="btn" data-bs-toggle="tooltip"data-bs-placement="left" title="click on a neighborhood or search for it to see its info."><i class="far fa-question-circle fa-2x"></i></button></div></div>';
         return div;
     };
-    questionMark.addTo(map)
-
-
+    
+    
     var how = L.control({position: 'bottomleft'});
-
+    
     how.onAdd = function (map) {
-
+        
         var div = L.DomUtil.create('div', 'info how')
         div.innerHTML = 'How did we build this map?';
         return div;
     };
     how.addTo(map)
-
-
+    questionMark.addTo(map)
+    
+    
 
 
     map.attributionControl.addAttribution('Copyrights &copy; <a href="https://github.com/HanaSharabash/CairoPulse">Cairo Pulse</a>');

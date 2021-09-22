@@ -163,7 +163,8 @@ async function paint_map() {
     how.onAdd = function (map) {
         
         var div = L.DomUtil.create('div', 'info how')
-        div.innerHTML = 'How did we build this map?';
+        var x = '<buttton type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">How did we build this map?</button';
+        div.innerHTML = x;
         return div;
     };
     how.addTo(map)

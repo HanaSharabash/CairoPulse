@@ -2,12 +2,37 @@
 
 {% block content %}
 {% load static  %}
+
 <link rel="stylesheet" href="{% static 'scripts/leaflet/leaflet.css' %}"/>
 <link rel="stylesheet" href="{% static 'styles/map.css' %}">
 <link rel="stylesheet" href="{% static 'styles/nav-menu.css' %}">
+
 {% csrf_token %}
 <script type="text/javascript" src="{% static 'scripts/map_load.js' %}"></script>
 <script src="{% static 'scripts/leaflet/leaflet.js' %}"></script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">How did we build this map?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Our website uses unsupervised machine learning algorithms,
+        We define different points of interest with different weights for each neighborhood and
+        our algorithm clusters areas depending on the types of their points of interest and their area and we calculate the vibrancy accordingly.
+          for more details click <a href="https://github.com/HanaSharabash/CairoPulse/tree/Documentation#phase-4-machine-learning-model-for-clustering">here</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <div id="mySidenav" class="sidenav" style="padding-top: 40px;z-index: 1001;">

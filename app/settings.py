@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gswx@#l(q3d_vu3#(a=6+#t+4y__@gmpp(&b2=1t8r)p@$z@6a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sampledomain.com']
+ALLOWED_HOSTS = ['127.0.0.1','https://cairopulse.herokuapp.com/']
 
 
 # Application definition

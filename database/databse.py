@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 from pymongo import MongoClient
 import re
 
-client =  MongoClient('mongodb+srv://CairoPulse:CairoPulse@cluster0.538hc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+client =  MongoClient('put connection string here')
 db = client['cairo_pulse']
 
 

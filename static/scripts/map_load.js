@@ -28,6 +28,7 @@ async function paint_map() {
     info.update = function (props) {
         this._div.innerHTML = '<h4>District Properties</h4>' +
         (props ? '<b>' + props.name_AR + '</b> <br> <b>' + props.name_EN + '</b>' : 'Hover over a District');
+        this._div.style.zIndex = 2000 ;
     };
     
     info.addTo(map);
@@ -70,9 +71,13 @@ async function paint_map() {
 
         data = await response.json();
         data = data[0];
+        let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
         document.getElementById('neighborhood-name').innerHTML = data['name_EN'];
         document.getElementById('neighborhood-name').setAttribute('neighborhoodid', e.target ? e.target.feature.properties._id['$oid'] : e.feature.properties._id['$oid'])
+        if(width<=600){
+        document.getElementById('neighborhood-name').style.fontSize == "0.7em"
+        }
         Object.keys(data).forEach(function (key) {
 
             var value = data[key];
@@ -84,8 +89,11 @@ async function paint_map() {
         });
 
         map.fitBounds(e.target ? e.target.getBounds() : e.getBounds());
+        if(width<=600){
+          side_nav.style.width = "260px";
+        }
+        else
         side_nav.style.width = "400px";
-
 
     }
 

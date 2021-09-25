@@ -217,7 +217,7 @@ The code including the wights of the points of interest and plotting of the data
 ##
 >## Phase 5: Cairpulse website
 ### A- creating the frontend design:
-###
+* We used bootstrap v5.1 to make our website as responsive and neat as possible.
 ### B- creating a database module that support the following:
 * retrieving the neighbourhoods name, geometry, and vibrancy.
 * retrieving the neighbourhoods that matches a search key using mongoDB text index and regex search

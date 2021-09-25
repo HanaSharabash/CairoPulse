@@ -146,7 +146,7 @@ for i in atrributes :
 
 
 >## Phase 3: Database setup:
-###for each one of the points of interest we created a separate monogDB collection with the following schema:
+### for each one of the points of interest we created a separate monogDB collection with the following schema:
 ```json
 {
   "_id" : objectId,
@@ -159,7 +159,7 @@ for i in atrributes :
 }
 ```
 ##
-###then we used these collections to create a collection for the neighborhoods to get the data within the geometry of this neighborhood's geometry 
+### then we used these collections to create a collection for the neighborhoods to get the data within the geometry of this neighborhood's geometry 
 ```python
 
 atrributes =  db.collection_names(include_system_collections=False)
@@ -214,17 +214,17 @@ We used `k-means` algorithm from `scikit learn` package in python to have 7 diff
 The code including the wights of the points of interest and plotting of the data exists in the file `ML_code.py` and the result of the clustering is in `result.json`.
 ##
 ##
->##Phase 5: Cairpulse website
-###A- creating the frontend design:
+>## Phase 5: Cairpulse website
+### A- creating the frontend design:
 ###
-###B- creating a database module that support the following:
+### B- creating a database module that support the following:
 * retrieving the neighbourhoods name, geometry, and vibrancy.
 * retrieving the neighbourhoods that matches a search key using mongoDB text index and regex search
 * retrieving the count of each point of interest within a giving neighborhood
 * retrieving the data of a given point of interest within a given neighborhood
 ###
-###C- using leaflet library to show the geometries retrieved from the database on the open street maps:
+### C- using leaflet library to show the geometries retrieved from the database on the open street maps:
 
 ###
-###D- using django as a backend technology to handle the incoming request from the client side. 
-###Also, it uses the database module to respond with the data retrieved.
+### D- using django as a backend technology to handle the incoming request from the client side. 
+### Also, it uses the database module to respond with the data retrieved.

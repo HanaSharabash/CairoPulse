@@ -212,7 +212,8 @@ The second feature was the same feature except we didn't give the points of inte
 We used `k-means` algorithm from `scikit learn` package in python to have 7 different clusters and we gave them levels of vibrancy according to the two features we had and what they represented (number of people per unit area in a neighborhood).
 ### N.B.
 The code including the wights of the points of interest and plotting of the data exists in the file `ML_code.py` and the result of the clustering is in `result.json`.
-
+##
+##
 >##Phase 5: Cairpulse website
 ###A- creating the frontend design:
 ###

@@ -143,7 +143,8 @@ for i in atrributes :
 
 ```
 ### B- merging the data from different sources:
-
+Since we have data from different resources (googleApi, YellowPages.com, etc..), we have to merge them together. This possibly could result in duplicates. So, we excluded the duplicates by pairwise comparison. Due to the different ways of writing the same name especially the arabic ones that is written in English (ex. El-abd, Elabd or even El3abd), 
+we used **difflib** library in Python 
 
 >## Phase 3: Database setup:
 ### for each one of the points of interest we created a separate monogDB collection with the following schema:

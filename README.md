@@ -8,7 +8,7 @@ Brief about the Project:
 
 # Documentation
 There were different phases throughout the project
-## Phase 1: Data Collection
+>## Phase 1: Data Collection
 ### In this phase we used Three methods of data collection:
 ##
 ### A- Web scrapping:
@@ -29,32 +29,37 @@ We used Puppeteer, a web scrapping library with Node in JavaScipt to extract dat
 
 ### B- Google APIs:
 We needed to query the places API on the following points of interest:
-* Atms
-* Banks 
-* Subway stations
-* Bus stations
-* Cafes
-* Restaurants
-* Cinemas
-* Supermarkets
-* Supermarkets
-* Libraries
-* Gyms
-* Mosques
-* Churches
-* Landmarks
-* Museums
-* Drugstores
-* Gas stations
-* Governmental offices
-* Hair care 
-* Hardware Stores
-* Parking
-* Stores
-* Police stations
-* Schools 
-* Parks
-* Hospitals
+* medical_care
+* gyms
+* banks
+* car_services
+* universities
+* cafes
+* beauty_salons
+* hotels
+* clubs
+* embassies_consulates
+* parks
+* subway_stations
+* stores
+* parkings
+* bus_stations
+* pharmacies
+* government_offices
+* malls
+* gas_stations
+* atms
+* schools
+* supermarkets
+* touristic_places
+* restaurants
+* police
+* libraries
+* bakery_pastry_shops
+* mosques
+* cinemas
+* hospitals 
+* churches
 ###
 The main problem with this method is that Google APIs limits its query results to 20 places only. So we couldn't use a nearby query thar will cover all the area of Cairo. In replace to that method, we split this query into sub-queries for each neighborhood in the 87 neighborhoods in the areas array bellow with a radius of 8Km. So this will cover most of the area, but it caused a duplication of results. 
 ```python
@@ -112,18 +117,89 @@ for i in areas:
 
 
 
-
-## Phase 2: Data filtration:
+##
+##
+>## Phase 2: Data filtration:
 ### In this phase we did the following pipeline process:
-
+### A- with Google API data:
+The collected data was passed to a pipeline in mongoDB:
 1. Grouping the data by the points of interest that the data of a specific point of interest is grouped from the data of 87 neighborhoods' data. 
 2. Removing duplicates from the data collected
 3. Removing unnecessary fields
+```python
+atrributes = ['medical_care', 'gyms', 'banks', 'car_services', 'universities', 'cafes', 'beauty_salons', 'hotels', 'clubs', 'embassies_consulates', 'parks', 'subway_stations', 'stores', 'parkings', 'bus_stations', 'pharmacies', 'government_offices', 'malls', 'gas_stations', 'atms', 'schools', 'supermarkets', 'touristic_places', 'restaurants', 'police', 'libraries', 'bakery_pastry_shops', 'mosques', 'cinemas', 'hospitals', 'churches']
 
-## Phase 3: Database setup:
-### 
+for i in atrributes :
+    db[i].aggregate([{"$project": {
+        "name": {"$ifNull": ["$name", None]},
+        "address": {"$ifNull": ["$vicinity", None]},
+        "location": {"type": "Point", "coordinates": [{"$ifNull": ["$geometry.location.lng", None]},
+                                                      {"$ifNull": ["$geometry.location.lat", None]}]
+                     },
+        "tags": {"$ifNull": ["$types", None]},
+        "rating": {"$ifNull": ["$rating", 0]},
+        "user_ratings_total": {"$ifNull": ["$user_ratings_total", 0]}}},
+        {"$out": {"db": "cairo_pulse", "coll": i}}])
 
-## Phase 4: Machine learning model for clustering
+```
+### B- merging the data from different sources:
+
+
+>## Phase 3: Database setup:
+###for each one of the points of interest we created a separate monogDB collection with the following schema:
+```json
+{
+  "_id" : objectId,
+  "name": string,
+  "address": string,
+  "location": geojson,
+  "tags" : [string],
+  "rating": double,
+  "user_total_rating": int
+}
+```
+##
+###then we used these collections to create a collection for the neighborhoods to get the data within the geometry of this neighborhood's geometry 
+```python
+
+atrributes =  db.collection_names(include_system_collections=False)
+atrributes.remove('neighborhoods')
+for index,i in districts.iterrows():
+    neighbourhood = {}
+    print(i)
+    neighbourhoodGeometry = geopandas.GeoSeries([i.loc['geometry']]).__geo_interface__['features'][0]['geometry']
+    neighbourhood['name_AR'] = i.loc['NAME_ar']
+    neighbourhood['name_EN'] = i.loc['NAME_en']
+    neighbourhood['geometry'] = neighbourhoodGeometry
+    nid = db.neighborhoods.insert_one(neighbourhood).inserted_id
+    print(type(nid))
+    for attr in atrributes:
+        attrWithin = db[attr].aggregate([{
+            "$match" : {"location":{"$geoWithin":{"$geometry":neighbourhoodGeometry}}}
+        },
+            {
+                "$project":{
+                    "_id" : 1
+                }
+            }
+        ])
+        for k in list(attrWithin) :
+            db[attr].update(
+
+                {
+                    "_id" : k['_id']
+                },
+                {
+                    "$set" : {
+                        "neighborhood" : nid
+                    }
+                }
+            )
+```
+##
+##
+
+>## Phase 4: Machine learning model for clustering
 ### The Objective:
 The goal was to have different neighborhoods in Cairo having different levels of `Vibrancy` based on urban indicators we collected in the data phase.
 ### The Hypothesis:
@@ -137,4 +213,17 @@ We used `k-means` algorithm from `scikit learn` package in python to have 7 diff
 ### N.B.
 The code including the wights of the points of interest and plotting of the data exists in the file `ML_code.py` and the result of the clustering is in `result.json`.
 
- 
+>##Phase 5: Cairpulse website
+###A- creating the frontend design:
+###
+###B- creating a database module that support the following:
+* retrieving the neighbourhoods name, geometry, and vibrancy.
+* retrieving the neighbourhoods that matches a search key using mongoDB text index and regex search
+* retrieving the count of each point of interest within a giving neighborhood
+* retrieving the data of a given point of interest within a given neighborhood
+###
+###C- using leaflet library to show the geometries retrieved from the database on the open street maps:
+
+###
+###D- using django as a backend technology to handle the incoming request from the client side. 
+###Also, it uses the database module to respond with the data retrieved.

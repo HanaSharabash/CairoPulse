@@ -143,8 +143,14 @@ for i in atrributes :
 
 ```
 ### B- merging the data from different sources:
-Since we have data from different resources (googleApi, YellowPages.com, etc..), we have to merge them together. This possibly could result in duplicates. So, we excluded the duplicates by pairwise comparison. Due to the different ways of writing the same name especially the arabic ones that is written in English (ex. El-abd, Elabd or even El3abd), 
-we used **difflib** library in Python 
+Since the data was collected from different resources (googleApi, YellowPages.com, etc..), they must be merged together, and this could possibly result in duplicates which should be excluded. 
+Any pair of POIs (Point of interest) was considered a duplicate if this pair satifies the following constraints:
+1. If the similarity ratio (measures how many characters are the same between two strings) between their names is greater than 0.95.
+2. The distance between them is less than 10 meters.
+The reason of having the first constraint is due to the different ways of writing the same word especially if an Arabic word is written in English (i.e. El-abd, Elabd or even El3abd). For this to be achieved, a Python library called **difflib** were used. Check [difflib](https://docs.python.org/3/library/difflib.html) for more info.
+The second constraint were considered, due to the error that might occur when locating a POI. In order to measure the distance, another Python library called **haversine** is used. Check [haversine](https://pypi.org/project/haversine/) for more info.
+
+Due to the large size of the data, running the preceding algorithm will take forever, therefore, the data were grouped such that each group will probably contain duplicates (i.e. a POI can be a cafe and restaurant at the same time, however a POI can't be a cafe and a medical center at the same time). 
 
 >## Phase 3: Database setup:
 ### for each one of the points of interest we created a separate monogDB collection with the following schema:

@@ -144,7 +144,7 @@ for i in atrributes :
 ```
 ### B- merging the data from different sources:
 Since the data was collected from different resources (googleApi, YellowPages.com, etc..), they must be merged together, and this could possibly result in duplicates which should be excluded. 
-Any pair of POIs (Point of interest) was considered a duplicate if this pair satifies the following constraints:
+Any pair of POIs (Point of interest) was considered a duplicate if this pair satisfies the following constraints:
 1. If the similarity ratio (measures how many characters are the same between two strings) between their names is greater than 0.95.
 2. The distance between them is less than 10 meters.
 The reason of having the first constraint is due to the different ways of writing the same word especially if an Arabic word is written in English (i.e. El-abd, Elabd or even El3abd). For this to be achieved, a Python library called **difflib** were used. Check [difflib](https://docs.python.org/3/library/difflib.html) for more info.

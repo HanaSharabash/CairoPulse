@@ -6,6 +6,8 @@ Brief about the Project:
 - Scalable backend platforms will be explored for data ingestion, storage, and processing, such as Kafka and Spark.
 - Insights will be communicated via an interactive platform with visualizations (either web or mobile).
 
+### Website: http://www.cairopulse.ml/
+
 # Documentation
 There were different phases throughout the project
 >## Phase 1: Data Collection
